@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: gr.aueb.cf.schoolapp.model.TeacherTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in gr.aueb.cf.schoolapp.model.TeacherTest
+gettersSetters  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Dinos> but was: <Dasios>
+	at gr.aueb.cf.schoolapp.model.TeacherTest.gettersSetters(TeacherTest.java:19)
+
+overloadedConstructorAndToString  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <2, Emi, Ly> but was: <Teacher{id=2, firstname='Emi', lastname='Ly'}>
+	at gr.aueb.cf.schoolapp.model.TeacherTest.overloadedConstructorAndToString(TeacherTest.java:30)
+
