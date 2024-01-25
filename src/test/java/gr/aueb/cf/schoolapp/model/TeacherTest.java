@@ -16,7 +16,7 @@ class TeacherTest {
         assertEquals(teacher.getFirstname(), "Dinos");
 
         teacher.setLastname("Dasios");
-        assertEquals(teacher.getFirstname(), "Dasios");
+        assertEquals(teacher.getLastname(), "Dasios");
     }
 
     @Test

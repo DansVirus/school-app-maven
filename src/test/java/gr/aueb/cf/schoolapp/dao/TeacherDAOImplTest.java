@@ -15,8 +15,9 @@ class TeacherDAOImplTest {
     private static ITeacherDAO teacherDAO;
 
     @BeforeAll
-    public static void setupClass() {
+    public static void setupClass() throws SQLException {
         teacherDAO = new TeacherDAOImpl();
+        DBHelper.eraseData();
     }
 
     @BeforeEach
@@ -41,13 +42,11 @@ class TeacherDAOImplTest {
         //assertTrue(teachers.size() == 1);
     }
 
-    @Test
-    void insert() {
-    }
 
     @Test
     void update() throws TeacherDAOException {
         Teacher teacher = new Teacher();
+        teacher.setId(2);
         teacher.setFirstname("Dinos2");
         teacher.setLastname("Dasios2");
         teacherDAO.update(teacher);
@@ -86,7 +85,7 @@ class TeacherDAOImplTest {
 
         teacher = new Teacher();
         teacher.setFirstname("Mark");
-        teacher.setLastname("Zouk");
+        teacher.setLastname("Zuk");
         teacherDAO.insert(teacher);
 
         teacher = new Teacher();

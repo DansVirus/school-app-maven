@@ -1,0 +1,149 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > DBUtil</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">gr.aueb.cf.schoolapp.service.util</a>
+</div>
+
+<h1>Coverage Summary for Class: DBUtil (gr.aueb.cf.schoolapp.service.util)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DBUtil</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (2/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    63.2%
+  </span>
+  <span class="absValue">
+    (12/19)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package gr.aueb.cf.schoolapp.service.util;
+&nbsp;
+&nbsp;import java.sql.Connection;
+&nbsp;import java.sql.SQLException;
+&nbsp;
+&nbsp;import org.apache.commons.dbcp2.BasicDataSource;
+&nbsp;
+&nbsp;public class DBUtil {
+&nbsp;
+<b class="fc">&nbsp;    private final static BasicDataSource ds = new BasicDataSource();</b>
+&nbsp;    private static Connection conn;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * No instances of this class can be available
+&nbsp;     */
+&nbsp;    private DBUtil() {}
+&nbsp;
+&nbsp;    static {
+<b class="fc">&nbsp;        ds.setUrl(&quot;jdbc:mysql://localhost:3306/tsdb?TimeZone=UTC&quot;);</b>
+<b class="fc">&nbsp;        ds.setUsername(&quot;dinos&quot;);</b>
+<b class="fc">&nbsp;        ds.setPassword(&quot;dinos1&quot;);//(System.getenv(&quot;TS_USER_PASSWORD&quot;)  sysdm.cpl to access sys env</b>
+<b class="fc">&nbsp;        ds.setInitialSize(8);</b>
+<b class="fc">&nbsp;        ds.setMaxTotal(32);</b>
+<b class="fc">&nbsp;        ds.setMinIdle(8);</b>
+<b class="fc">&nbsp;        ds.setMaxIdle(10);</b>
+<b class="fc">&nbsp;        ds.setMaxOpenPreparedStatements(100);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public static Connection getConnection() throws SQLException {
+&nbsp;        try {
+<b class="fc">&nbsp;            conn = ds.getConnection();</b>
+<b class="nc">&nbsp;        } catch (SQLException e) {</b>
+<b class="nc">&nbsp;            e.printStackTrace();</b>
+<b class="nc">&nbsp;            throw e;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return conn;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public static void closeConnection() {
+&nbsp;        try {
+<b class="nc">&nbsp;            if (conn != null) conn.close();</b>
+<b class="nc">&nbsp;        } catch (SQLException e) {</b>
+<b class="nc">&nbsp;            e.printStackTrace();</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-25 18:41</div>
+</div>
+</body>
+</html>

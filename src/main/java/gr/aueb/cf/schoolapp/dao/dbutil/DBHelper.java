@@ -11,6 +11,9 @@ import java.util.List;
 
 public class DBHelper {
 
+    /**
+     * No instances of this class should be available
+     */
     private DBHelper() {}
 
     public static void eraseData() throws SQLException {
@@ -41,7 +44,6 @@ public class DBHelper {
             if (conn != null) {
                 conn.close();
             }
-
         }
     }
 

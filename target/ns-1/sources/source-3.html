@@ -1,0 +1,82 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ITeacherService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">gr.aueb.cf.schoolapp.service</a>
+</div>
+
+<h1>Coverage Summary for Class: ITeacherService (gr.aueb.cf.schoolapp.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">ITeacherService</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package gr.aueb.cf.schoolapp.service;
+&nbsp;
+&nbsp;import gr.aueb.cf.schoolapp.dao.exceptions.TeacherDAOException;
+&nbsp;import gr.aueb.cf.schoolapp.dto.TeacherDTO;
+&nbsp;import gr.aueb.cf.schoolapp.model.Teacher;
+&nbsp;import gr.aueb.cf.schoolapp.service.exceptions.TeacherNotFoundException;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public interface ITeacherService {
+&nbsp;    Teacher insertTeacher(TeacherDTO teacherToInsert) throws TeacherDAOException;
+&nbsp;    Teacher updateTeacher(TeacherDTO teacherToUpdate) throws TeacherDAOException, TeacherNotFoundException;
+&nbsp;    void deleteTeacher(int id) throws TeacherDAOException, TeacherNotFoundException;
+&nbsp;    List&lt;Teacher&gt; getTeacherByLastname(String lastname) throws TeacherDAOException;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-01-25 18:41</div>
+</div>
+</body>
+</html>
